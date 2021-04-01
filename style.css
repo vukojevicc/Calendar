@@ -1,0 +1,43 @@
+#kalendar{
+    margin: 20px auto;
+    margin-bottom: 0;
+    border-spacing: 10px;
+    border-collapse: separate;
+    font-size: 15px;
+}
+#kalendar td, th{
+    padding: 5px;
+    text-align: center;
+}
+#naslov{
+    font-size: 25px;
+    font-weight: 900;
+    margin-bottom: 12px;
+}
+.red:first-of-type{
+    display: none;
+}
+#mesec{
+    font-weight: 100;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+.arrows{
+    font-size: 40px;
+    cursor: pointer;
+    display: inline-block;
+}
+.arrow_parent{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+.righ_arrow{
+    margin-left: 50px;
+}
+.left_arrow{
+    margin-right: 50px;
+}
+td{
+    cursor: default;
+}
