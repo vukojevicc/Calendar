@@ -32,10 +32,10 @@ $(document).ready(function () {
                 }
                 jTrue = false;
             }
-            // Ubacivanje datuma u kalendar
+            // Inserting dates into calendar
             $('#kalendar td')[j + 6].innerHTML = dani[i].getDate();
 
-            // Dodeljivanje crvenog okvira danasnjem datumu
+            // Adding red frame to current date
             if ($('#kalendar td')[i].innerText == novi_datum.getDate()
                 && $('#mesec').text().includes(meseci[novi_datum.getMonth()])
                 && $('#mesec').text().includes(novi_datum.getFullYear())) {
