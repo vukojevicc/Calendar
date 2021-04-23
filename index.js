@@ -35,15 +35,6 @@ $(document).ready(function () {
             // Inserting dates into calendar
             $('#kalendar td')[j + 6].innerHTML = dani[i].getDate();
 
-            // Adding red frame to current date
-            if ($('#kalendar td')[i].innerText == novi_datum.getDate()
-                && $('#mesec').text().includes(meseci[novi_datum.getMonth()])
-                && $('#mesec').text().includes(novi_datum.getFullYear())) {
-                $('#kalendar td')[i].style.border = '1px solid red';
-            } else {
-                $('#kalendar td')[i].style.border = 'none';
-            }
-
             j++;
         }
         var empty_rows = document.querySelectorAll('.last_two_rows');
@@ -54,6 +45,21 @@ $(document).ready(function () {
                 red.style.display = 'table-row';
             }
         })
+        
+        // Adding red frame to current date
+        let day_matched=false;
+            let day=0;
+            while(!day_matched) {
+                if ($('#kalendar td')[day].innerText == novi_datum.getDate()
+                    && $('#mesec').text().includes(meseci[novi_datum.getMonth()])
+                    && $('#mesec').text().includes(novi_datum.getFullYear())) {
+                    $('#kalendar td')[day].style.border = '1px solid red';
+                    day_matched = true;
+                } else {
+                    $('#kalendar td')[day].style.border = 'none';
+                }
+                day++;
+            }
 
         if ($('#kalendar td')[6].innerHTML != '') {
             $('.red')[0].style.display = 'table-row';
