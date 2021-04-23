@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var novi_datum = new Date();
+    var novi_datum = new Date(2021, 3, 30);
     var meseci = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
     function getDaysInMonth(month, year) {
@@ -34,6 +34,15 @@ $(document).ready(function () {
             }
             // Inserting dates into calendar
             $('#kalendar td')[j + 6].innerHTML = dani[i].getDate();
+
+            // Adding red frame to current date
+            if ($('#kalendar td')[j + 6].innerText == novi_datum.getDate()
+                && $('#mesec').text().includes(meseci[novi_datum.getMonth()])
+                && $('#mesec').text().includes(novi_datum.getFullYear())) {
+                $('#kalendar td')[j + 6].style.border = '1px solid red';
+            } else {
+                $('#kalendar td')[j + 6].style.border = 'none';
+            }
 
             j++;
         }
