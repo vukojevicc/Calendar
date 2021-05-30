@@ -29,6 +29,7 @@ $(document).ready(function () {
                 j += dani[i].getDay();
                 for (let i = 0; i < $('#kalendar td').length; i++) {
                     $('#kalendar td')[i].innerHTML = '';
+                    $('#kalendar td')[i].style.border = 'none';
                 }
                 jTrue = false;
             }
@@ -40,9 +41,7 @@ $(document).ready(function () {
                 && $('#mesec').text().includes(meseci[novi_datum.getMonth()])
                 && $('#mesec').text().includes(novi_datum.getFullYear())) {
                 $('#kalendar td')[j + 6].style.border = '1px solid red';
-            } else {
-                $('#kalendar td')[j + 6].style.border = 'none';
-            }
+            } 
 
             j++;
         }
